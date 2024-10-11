@@ -35,11 +35,11 @@ public class UserController {
     private UserService service;
 
     @GetMapping
-    public ResponseEntity<Page<User>> getAllUsers( @And({
+    public ResponseEntity<Page<User>> getAllUsers(@And({
                                                         @Spec(path = "userType", spec = Equal.class),
                                                         @Spec(path = "userStatus", spec = Equal.class),
                                                         @Spec(path = "email", spec = Like.class)
-                                                    })
+                                                   })
                                                    Specification<User> spec,
                                                    @PageableDefault(page = 0, size = 10, sort = "userId", direction = Sort.Direction.ASC)
                                                    Pageable pageable) {
