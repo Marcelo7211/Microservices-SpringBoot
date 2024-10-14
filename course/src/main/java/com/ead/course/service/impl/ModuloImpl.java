@@ -27,6 +27,7 @@ public class ModuloImpl implements ModuloService {
 
     @Autowired
     private ModuloRepository repository;
+
     @Autowired
     private LessonRepository lessonRepository;
 

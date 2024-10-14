@@ -42,7 +42,7 @@ public class Modulo implements Serializable {
     private Course course;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    @OneToMany(mappedBy = "modulo", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "modulo", fetch = FetchType.LAZY)
     @JsonIgnoreProperties("modulo")
     @Fetch(FetchMode.SUBSELECT)
     private Set<Lesson> lessons;

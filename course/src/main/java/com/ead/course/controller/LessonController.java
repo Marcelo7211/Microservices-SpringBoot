@@ -37,13 +37,16 @@ public class LessonController {
     }
 
     @PutMapping("/{lessonId}")
-    public ResponseEntity<LessonDto> put(@PathVariable(value = "lessonId") UUID lessonId, @RequestBody @Validated LessonDto lessonDto){
+    public ResponseEntity<LessonDto> put(@PathVariable(value = "lessonId") UUID lessonId,
+                                         @RequestBody
+                                         @Validated
+                                         LessonDto lessonDto){
         return ResponseEntity.status(HttpStatus.OK).body(service.update(lessonId, lessonDto));
     }
 
 
     @DeleteMapping("/{lessonId}")
-    public ResponseEntity<?> delete(@PathVariable(value = "lessonId") UUID lessonId) {
+    public ResponseEntity<?> delete( @PathVariable(value = "lessonId") UUID lessonId) {
         service.delete(lessonId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     };

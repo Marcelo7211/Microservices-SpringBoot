@@ -53,7 +53,7 @@ public class CourseController {
                                                         @Spec(path = "name", spec = Like.class)
                                                     })
                                                     Specification<Course> spec,
-                                                    @PageableDefault(page = 0, size = 10, sort = "userId", direction = Sort.Direction.ASC)
+                                                    @PageableDefault(page = 0, size = 10, sort = "courseId", direction = Sort.Direction.ASC)
                                                     Pageable pageable) {
 
         return ResponseEntity.ok(service.findAllPageable(spec, pageable));

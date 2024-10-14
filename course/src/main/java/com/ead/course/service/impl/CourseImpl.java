@@ -98,6 +98,8 @@ public class CourseImpl implements CourseService {
          courseModel.setCourseId(courseSaved.getCourseId());
          courseModel.setCreationDate(courseSaved.getCreationDate());
          courseModel.setLastUpdadeDate(LocalDateTime.now(ZoneId.of("UTC")));
+         courseModel.setUserInstructor(courseDto.getUserInstrutor());
+
 
          repository.save(courseModel);
 
