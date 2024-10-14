@@ -29,7 +29,7 @@ public class Lesson implements Serializable {
     @Column(nullable = false, length = 255)
     private String description;
 
-    @Column(nullable     = false)
+    @Column(nullable = false)
     private String videoUrl;
 
     @Column(nullable = false)
