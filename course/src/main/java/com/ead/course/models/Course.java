@@ -56,7 +56,7 @@ public class Course implements Serializable {
     private UUID userInstructor;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY, orphanRemoval = true)
     @Fetch(FetchMode.SUBSELECT) //Como será realizado as consultas relacionadas a course  podendo ser SELECT, SUBSELECT ou JOIN
     @JsonIgnoreProperties("course")
     private Set<Modulo> modulos;
